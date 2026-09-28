@@ -20,7 +20,7 @@ function App() {
     setFilterMessage("");
     setError("");
     try {
-      const response = await fetch("http://localhost:8000/expenses/view");
+      const response = await fetch("https://expense-tracker-53ma.onrender.com/expenses/view");
       if (!response.ok) {
         setError("Failed to load expenses");
         return;
@@ -41,7 +41,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/expenses?${params.toString()}`
+        `https://expense-tracker-53ma.onrender.com/expenses?${params.toString()}`
       );
       if (!response.ok) {
         setError("Failed to filter expenses");
@@ -59,7 +59,7 @@ function App() {
   async function deleteExpense(id) {
     setError("");
     try {
-      const response = await fetch(`http://localhost:8000/expenses/${id}`, {
+      const response = await fetch(`https://expense-tracker-53ma.onrender.com/expenses/${id}`, {
         method: "DELETE",
       });
 
