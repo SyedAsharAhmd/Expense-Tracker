@@ -60,11 +60,10 @@ def expenses_summary():
 
     cursor.execute("SELECT MAX(amount) AS highest_expense FROM expenses;")
     highest = cursor.fetchone()
-
     cursor.execute(
-        "SELECT category, SUM(amount) AS total_spending "
-        "FROM expenses GROUP BY category;"
-    )
+        "SELECT MIN(category) AS category, SUM(amount) AS total_spending "
+        "FROM expenses GROUP BY LOWER(category);"
+)
     category_total = cursor.fetchall()
 
     connection.close()
