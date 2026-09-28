@@ -7,7 +7,7 @@ function Summary({ refreshKey }) {
   useEffect(() => {
     async function fetchSummary() {
       try {
-        const response = await fetch("http://localhost:8000/expenses/summary");
+        const response = await fetch("https://expense-tracker-53ma.onrender.com/expenses/summary");
         if (!response.ok) {
           setError("Failed to load summary");
           return;

@@ -17,7 +17,7 @@ function GetExpenseById() {
     }
 
     try {
-      const response = await fetch(`http://localhost:8000/expenses/${trimmedId}`);
+      const response = await fetch(`https://expense-tracker-53ma.onrender.com/expenses/${trimmedId}`);
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));

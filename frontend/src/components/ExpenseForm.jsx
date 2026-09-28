@@ -27,7 +27,7 @@ function ExpenseForm({ onExpenseAdded }) {
 
     let response;
     try {
-      response = await fetch("http://localhost:8000/expenses", {
+      response = await fetch("https://expense-tracker-53ma.onrender.com/expenses", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
